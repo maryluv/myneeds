@@ -7,7 +7,8 @@ def opentext(text):
     with open (text, 'r', encoding = 'utf-8') as t:
         text = t.read()
     return(text)
-        
+
+##задание 1 пробный вариант
 def anawords(text):
     t = opentext(text)
     nwords = re.findall(r'<w>', t)
@@ -98,7 +99,8 @@ def count_ana_word(line_arr):
     n_arr = []
     for line in line_arr:
         if '<w' in line:
-            num = len(re.findall('<ana ', line))
+            num = len(re.findall('<ana ', line)) 
+            ##n_arr -массив, длина которого совпадает с числом слов в тексте. Каждый его элемент - это число разборов на одно слово
             n_arr.append(num)
     counter = sum(n_arr)/len(n_arr)
     return counter
